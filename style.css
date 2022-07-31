@@ -1,0 +1,146 @@
+/* **** Estilos Globais **** */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Darker Grotesque', sans-serif;
+}
+
+ul, ol {
+  list-style-type: none;
+ }
+ 
+ a {
+   text-decoration: none;
+ }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.justify_evenly {
+  justify-content: space-evenly;
+}
+
+/* ***** Estilo Cabeçalho **** */
+
+.navigation_bar {
+  position: relative;
+  background-color:#85CDF5;
+  padding: 20px 0px 10px 0px;
+}
+
+
+/* **** Hamburguer * ****/
+
+.container_hamburguer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#checkbox-hamburguer {
+  position: absolute;
+  opacity: 0;
+}
+
+.hamburguer {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  height: 22px;
+  width: 30px;
+}
+
+.hamburguer .bar {
+  position: absolute;
+  display: block;
+  height: 5px;
+  width: 100%;
+  border-radius: 30px;
+  background: #000;
+  transition: 0.25s ease-in-out;
+}
+
+.hamburguer .bar:nth-child(1) {
+  top:0;
+}
+
+.hamburguer .bar:nth-child(2) {
+  top:8px;
+}
+
+.hamburguer .bar:nth-child(3) {
+  top:16px;
+}
+
+#checkbox-hamburguer:checked + .hamburguer .bar:nth-child(1) {
+  transform: rotate(-45deg);
+  top: 8px;
+}
+
+#checkbox-hamburguer:checked + .hamburguer .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#checkbox-hamburguer:checked + .hamburguer .bar:nth-child(3) {
+  transform: rotate(45deg);
+  top: 8px;
+}
+
+#checkbox-hamburguer:checked ~ .menu {
+  display: block;
+  transform: initial;
+}
+
+.menu .link {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 33.12px;
+}
+
+/* **** Media Querries**** */
+
+@media (max-width:991px) {
+  .justify_content_center_xs {
+    justify-content: center;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    min-width: 155px;
+    background-color: #85CDF5;
+    right: 0;
+    top: 130px;
+    padding: 8px 16px;
+    transform: translateX(100%);   
+  }
+
+  .menu .link {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .menu {
+    display: flex;
+    transform: initial;
+  }
+
+  .gap_menu {
+    gap: 32px;
+  }
+
+  .hamburguer{
+    display: none;
+  }
+}  
