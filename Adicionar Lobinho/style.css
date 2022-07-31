@@ -1,0 +1,93 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.window{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    margin-top: 50px;
+    margin-bottom: 100px;
+
+    padding: 1.5vw 4vw 1.5vw 4vw;    
+
+    border: solid 4px #333;
+}
+
+.title{
+    font-family: 'Darker Grotesque';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 4vw;    
+    text-align: center;
+
+    color: #000000;
+
+    margin-bottom: 2vw;
+}
+
+input{
+    background: #E6E6E6;
+
+    border: 1px solid #333333;
+    border-radius: 2px;
+
+    height: 2.5vw;
+}
+
+.nameAndAge{
+    display: flex;   
+    flex-direction: row;
+    gap: 20px;
+}
+
+.inputWolfeName{
+    width: 100%;
+}
+
+.inputWolfeAge{
+    width: 100%;
+}
+
+.inputlinkPhoto{
+    width: 100%;
+}
+
+textarea{
+    margin-bottom: 50px;
+
+    width: 60vw;
+    height: 200px;
+
+    background: #E6E6E6;
+    border: 1px solid #333333;
+    border-radius: 2px;
+}
+
+label{
+    font-family: 'Darker Grotesque';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.4vw;
+    line-height: 4vw;
+
+    margin-top: 20px;
+}
+
+button{
+    font-family: 'Darker Grotesque';      
+    font-size: 2.5VW;        
+
+    color: #FFFFFF;
+    background: #2C5680;
+    border: 1px solid #333333;
+
+    padding: 0.5vw 4.5vw;
+}
