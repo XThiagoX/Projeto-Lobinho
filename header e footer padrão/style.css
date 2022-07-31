@@ -21,6 +21,10 @@ ul, ol {
   align-items: center;
 }
 
+.justify_center {
+  justify-content: center;
+}
+
 .between {
   justify-content: space-between;
 }
@@ -106,6 +110,50 @@ ul, ol {
   font-weight: 400;
   line-height: 33.12px;
 }
+
+/* ***** Estilo Main **** */
+
+main {
+  min-height: 500px;
+}
+
+/* ***** Estilo Footer **** */
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.map {
+  gap: 20px;
+}
+
+.informations {
+  
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 15px;
+  
+}
+
+.p_footer {
+  width: 60%;
+}
+
+.btn_footer {
+  width: 25%;
+}
+
+.credit {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+
 
 /* **** Media Querries**** */
 
