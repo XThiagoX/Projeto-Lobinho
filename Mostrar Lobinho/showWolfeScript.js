@@ -1,5 +1,15 @@
 let urlApi = "https://lobinhos.herokuapp.com/wolves"
-let IdWolfe = 62
+let IdWolfe = 270
+
+// CRIAÇÃO E ATRIBUIÇÃO DAS CLASSES AOS BOÕES (ADOTAR E EXCLUIR)
+let buttonAdopt = document.createElement('button')
+buttonAdopt.setAttribute('class', 'buttonAdopt')
+buttonAdopt.textContent = "ADOTAR"
+
+let buttonDelete = document.createElement('button')
+buttonDelete.setAttribute('class', 'buttonDelete')
+buttonDelete.textContent = "EXCLUIR"
+
 
 function showWolfe(wolfe){
     // Criação e obtenção de elemtos da página para conter as informações
@@ -11,9 +21,7 @@ function showWolfe(wolfe){
     divWolfeName.setAttribute('class', 'WolfeName')
     
     let wolfeName = document.createElement('h1')
-    wolfeName.innerHTML = wolfe.name
-    console.log(typeof(wolfeName))
-    
+    wolfeName.innerHTML = wolfe.name        
     // let card = document.querySelector('.card') 
     let card = document.createElement('div')
     card.setAttribute('class', 'card')
@@ -28,17 +36,18 @@ function showWolfe(wolfe){
     let divButtons = document.createElement('div')
     divButtons.setAttribute('class', 'buttons')
 
-    let buttonAdopt = document.createElement('button')
-    buttonAdopt.setAttribute('class', 'buttonAdopt')
-    buttonAdopt.textContent = "ADOTAR"
-    let buttonDelete = document.createElement('button')
-    buttonDelete.setAttribute('class', 'buttonDelete')
-    buttonDelete.textContent = "EXCLUIR"
+    // let buttonAdopt = document.createElement('button')
+    // buttonAdopt.setAttribute('class', 'buttonAdopt')
+    // buttonAdopt.textContent = "ADOTAR"
+    // let buttonDelete = document.createElement('button')
+    // buttonDelete.setAttribute('class', 'buttonDelete')
+    // buttonDelete.textContent = "EXCLUIR"
 
     let divDescription = document.createElement('div')
     divDescription.setAttribute('class', 'descriptionText')
     let descriptionText = document.createElement('p')
     descriptionText.innerHTML = wolfe.description
+
     // Montando o bloco de elementos com as informações
     divWolfeName.append(wolfeName)    
     main.append(divWolfeName)
@@ -55,10 +64,8 @@ function showWolfe(wolfe){
     main.append(card)
 }
 
-async function getMessage(){
-    // let descriptionWolfe = document.querySelector('.descriptionText')
-    // descriptionWolfe.innerHTML = " "
 
+async function getMessage(){    
     let fetchConfig={
         method: "GET"
     }
@@ -72,6 +79,23 @@ async function getMessage(){
             .catch(error => { console.log(error) }))
         .catch(error => { console.log(error) })
 }
+
+// FUNÇÕES DOS BOTÕES
+buttonAdopt.addEventListener('click', e => {
+    alert('adoção')
+})
+
+buttonDelete.addEventListener('click', e => {
+    let fetchConfig ={
+        method: "DELETE"
+    }
+
+    await fetch(urlApi, fetchConfig)
+        .then( anwer => anwer.json()
+            .then(wolfe => { console.log(wolfe) })
+            .catch(error => { console.log(error) }))
+        .catch(error => { console.log(error) })
+})
 
 getMessage()
 
