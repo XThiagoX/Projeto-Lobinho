@@ -21,6 +21,7 @@ ul, ol {
   align-items: center;
 }
 
+
 .text_center {
   text-align: center;
 }
@@ -156,6 +157,9 @@ ul, ol {
   font-size: 28px;
 
   margin-bottom: 15px;
+
+  width: 100%;
+  text-align: center;
 }
 
 .aboutText {
@@ -220,17 +224,17 @@ ul, ol {
   color: #DEB959;
   font-size: 28px;
 
-  margin-bottom: 15px;
+  margin-bottom: 50px;
 
   width: 100%;
   text-align: center;
 }
 
 .exampleImg {
-  width: 330px;
-  height: 228px;
-
+  width: 230px;
+  height: 128px;
   margin-bottom: 8px;
+  box-shadow: -20px -20px #2c5680;
 }
 
 .exampleName {
@@ -238,10 +242,17 @@ ul, ol {
   text-align: center;
 }
 
+.exampleTextContainer {
+  text-align: center;
+}
 .exampleText {
   margin-bottom: 40px;
   display: inline-block;
-  text-align: center;
+  width: 80%;
+}
+
+.mBt70 {
+  margin-bottom: 70px;
 }
 
 
@@ -323,6 +334,11 @@ ul, ol {
     justify-content: space-between;
   }
 
+  .rowNoWrap {
+    display: flex;
+    justify-content: center;
+  }
+
   .menu {
     display: flex;
     transform: initial;
@@ -334,5 +350,10 @@ ul, ol {
 
   .hamburguer{
     display: none;
-  } 
+  }
+  
+  .marginBtLg {
+    margin-bottom: 26px;
+  }
+
 }  
