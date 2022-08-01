@@ -130,6 +130,7 @@ ul, ol {
 }
 
 .headerTitle {
+  width: 100%;
   text-align: center;
   margin-bottom: 20px;
 
@@ -139,7 +140,7 @@ ul, ol {
 
 .headerText {
   text-align: center;
-  width: 60%;
+  width: 100%;
 
   color: #fff;
   font-size: 20px;  
