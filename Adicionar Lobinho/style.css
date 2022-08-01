@@ -1,9 +1,19 @@
+/* ---------- GERAL  */
 main{
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
+}
+
+textarea,
+.inputlinkPhoto,
+.inputWolfeAge,
+.inputWolfeName{
+    font-family: 'Darker Grotesque';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.4vw;
+    line-height: 4vw;
 }
 
 .window{
