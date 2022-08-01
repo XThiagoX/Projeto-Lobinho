@@ -247,9 +247,11 @@ ul, ol {
 
 .exampleImgContainer{
   margin-bottom: 8px;
+  text-align: center;
 }
 
-.exampleImg {
+.exampleImg,
+.exampleImg2 {
   width: 230px;
   height: 128px;  
   box-shadow: -20px -20px #2c5680;
@@ -259,16 +261,19 @@ ul, ol {
   margin-bottom: 8px;
 }
 
-.exampleName {
+.exampleName,
+.exampleName2 {
   font-size: 20px;  
   text-align: center;
 }
 
-.exampleTextContainer {
+.exampleTextContainer,
+.exampleTextContainer2 {
   text-align: center;
 }
 
-.exampleText {
+.exampleText,
+.exampleText2 {
   font-size: 14px;
   display: inline-block;
   width: 80%;
@@ -368,6 +373,10 @@ ul, ol {
     margin-bottom: 26px;
   }
 
+  .mBt70 {
+    margin-bottom: 0px;
+  }
+
   .menu {
     display: flex;
     transform: initial;
@@ -379,8 +388,77 @@ ul, ol {
 
   .hamburguer{
     display: none;
-  }
+  }  
+
+  .headerTextContainer {
+    display: flex;
+    justify-content: center;
+} 
+
+.aboutTextContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.exampleImg {
+  width: 330px;
+  height: 228px;
+  box-shadow: -40px -40px #2c5680;
+}
+
+.exampleImg2 {
+  width: 330px;
+  height: 228px;
+  box-shadow: 40px -40px #2c5680;
+} 
   
+  .linha1 {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+
+  .exampleInfoContent {
+    display: flex;
+    flex-direction: column;    
+  }
+
+  .exampleName {
+    text-align: start;
+  }
+
+  .exampleTextContainer {
+     text-align: start;
+  }
+
+  .exampleText {
+    width: 100%;
+  }
+
+  .linha2 {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+  }
+
+  .exampleName2 {
+    text-align: end;
+  }
+
+  .exampleTextContainer2 {
+    text-align: end;
+  }
+
+  .exampleText2 {
+     text-align: end;
+  }
+}
+
+@media (min-width:1200px) {
+  .container {
+    max-width: 1180px;
+  }
+
   .header {
     padding: 120px 0px 140px 0;
   }
@@ -390,10 +468,10 @@ ul, ol {
     font-size: 96px;
   }
 
-  .headerTextContainer {
-    display: flex;
-    justify-content: center;
-}
+  .aboutText {
+    font-size: 24px;
+    width: 70%;    
+  }  
 
   .headerText {    
     font-size: 30px;
@@ -406,16 +484,6 @@ ul, ol {
 
   .aboutTitle {
     font-size: 48px;
-  }
-
-  .aboutTextContainer {
-    display: flex;
-    justify-content: center;
-}
-
-  .aboutText {
-    font-size: 24px;
-    width: 70%;    
   }
 
   .values {
@@ -451,13 +519,21 @@ ul, ol {
     width: 430px;
     height: 328px;
     box-shadow: -40px -40px #2c5680;
-  }  
+  }
+  
+  .exampleImg2 {
+    width: 430px;
+    height: 328px;
+    box-shadow: 40px -40px #2c5680;
+  } 
 
-  .exampleName {
+  .exampleName,
+  .exampleName2 {
     font-size: 36px;  
   }
 
-  .exampleText {
+  .exampleText,
+  .exampleText2 {
     font-size: 24px;
   }
-}  
+}
