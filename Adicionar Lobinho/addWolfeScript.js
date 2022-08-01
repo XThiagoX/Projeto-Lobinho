@@ -17,9 +17,8 @@ async function postWolfInformation(wolfeName, wolfeAge, wolfeImage, wolfeDescrip
 
     await fetch(urlApi, fetchConfig)
         .then( answer =>  answer.json() 
-            .then(resp => { alert("SUCESSO! Seu lobo foi cadastrado.") })
-            .catch(error => { alert("ERRO! Houve algum problema, tente novamente mais tarde.", error ) 
-                console.log(error) }))
+            .then(resp => { alert("SUCESSO! Seu lobo foi cadastrado.", resp), console.log(resp) })
+            .catch(error => { alert("ERRO! Houve algum problema, tente novamente mais tarde."),console.log(error)}))
         .catch(error => { console.log(error) }) 
 }
 
