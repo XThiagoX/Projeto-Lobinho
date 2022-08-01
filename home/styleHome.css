@@ -129,21 +129,25 @@ ul, ol {
   padding: 30px 0;
 }
 
-.headerTitle {
+.headerTitleContainer {
   width: 100%;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 20px;  
+}
 
+.headerTitle {
   color: #fff;
-  font-size: 36px;    
+  font-size: 54px;
+}
+
+.headerTextContainer {
+  width: 100%;
+  text-align: center;  
 }
 
 .headerText {
-  text-align: center;
-  width: 100%;
-
+  font-size: 17px;
   color: #fff;
-  font-size: 20px;  
 }
 
 /* ***** Estilos Main About **** */
@@ -153,22 +157,26 @@ ul, ol {
   padding: 30px 0;
 }
 
+.aboutTitleContainer {
+  width: 100%;
+  text-align: center;  
+
+  margin-bottom: 15px;  
+}
+
 .aboutTitle {
   color: #DEB959;
   font-size: 28px;
+}
 
-  margin-bottom: 15px;
-
+.aboutTextContainer {
   width: 100%;
-  text-align: center;
+  text-align: center;  
 }
 
 .aboutText {
-  text-align: center;
-  width: 100%;
-
   color: #fff;
-  font-size: 16px;  
+  font-size: 14px;
 }
 
 /* ***** Estilos Main Value **** */
@@ -178,14 +186,16 @@ ul, ol {
   padding: 30px 0;
 }
 
+.valuesTitleContainer {
+  width: 100%;
+  text-align: center;
+
+  margin-bottom: 15px;
+}
+
 .valuesTitle {
   color: #DEB959;
   font-size: 28px;
-
-  margin-bottom: 15px;
-
-  width: 100%;
-  text-align: center;
 }
 
 .valuesItems {
@@ -203,11 +213,13 @@ ul, ol {
 
 .subItemTitle {
   color: #fff;
+  font-size: 20px;
   margin-bottom: 8px;
 }
 
 .subItemText {
   color:#fff;
+  font-size: 14px;
   display: inline-block;
   width: 50%;
 
@@ -221,33 +233,43 @@ ul, ol {
   padding: 30px 0;
 }
 
+.exampleTitleContainer {  
+  width: 100%;
+  text-align: center;
+
+  margin-bottom: 50px;  
+}
+
 .exampleTitle {
   color: #DEB959;
   font-size: 28px;
+}
 
-  margin-bottom: 50px;
-
-  width: 100%;
-  text-align: center;
+.exampleImgContainer{
+  margin-bottom: 8px;
 }
 
 .exampleImg {
   width: 230px;
-  height: 128px;
-  margin-bottom: 8px;
+  height: 128px;  
   box-shadow: -20px -20px #2c5680;
 }
 
-.exampleName {
+.exampleNameContainer {
   margin-bottom: 8px;
+}
+
+.exampleName {
+  font-size: 20px;  
   text-align: center;
 }
 
 .exampleTextContainer {
   text-align: center;
 }
+
 .exampleText {
-  margin-bottom: 40px;
+  font-size: 14px;
   display: inline-block;
   width: 80%;
 }
@@ -299,6 +321,8 @@ ul, ol {
   margin-bottom: 16px;
 }
 
+
+
 /* **** Media Querries**** */
 
 @media (max-width:991px) {
@@ -335,9 +359,13 @@ ul, ol {
     justify-content: space-between;
   }
 
-  .rowNoWrap {
+  .rowNoWrapLg {
     display: flex;
     justify-content: center;
+  }
+
+  .marginBtLg {
+    margin-bottom: 26px;
   }
 
   .menu {
@@ -353,8 +381,83 @@ ul, ol {
     display: none;
   }
   
-  .marginBtLg {
-    margin-bottom: 26px;
+  .header {
+    padding: 120px 0px 140px 0;
   }
 
+  .headerTitle {
+    color: #fff;
+    font-size: 96px;
+  }
+
+  .headerTextContainer {
+    display: flex;
+    justify-content: center;
+}
+
+  .headerText {    
+    font-size: 30px;
+    width: 60%;        
+  }
+
+  .about {
+    padding: 30px 0 60px 0;
+  }
+
+  .aboutTitle {
+    font-size: 48px;
+  }
+
+  .aboutTextContainer {
+    display: flex;
+    justify-content: center;
+}
+
+  .aboutText {
+    font-size: 24px;
+    width: 70%;    
+  }
+
+  .values {
+    padding: 30px 0 90px 0;
+  }
+
+  .valuesTitle {
+    font-size: 48px;
+  }
+
+  .subItemTitle {
+    font-size: 34px;
+  }
+
+  .subItemText {
+    width: 80%;
+    font-size: 20px;
+  }
+
+  .example {
+    padding: 30px 0 120px 0;
+  }
+
+  .exampleTitleContainer{
+    margin-bottom: 60px;
+  }
+
+  .exampleTitle {
+    font-size: 48px;
+  }
+
+  .exampleImg {
+    width: 430px;
+    height: 328px;
+    box-shadow: -40px -40px #2c5680;
+  }  
+
+  .exampleName {
+    font-size: 36px;  
+  }
+
+  .exampleText {
+    font-size: 24px;
+  }
 }  
