@@ -16,14 +16,11 @@
     margin-left: 6%;
     margin-top: 6%;
 
-    width: 597px;
-    height: 81px;
-
     font-style: normal;
     font-weight: 600;
     font-size: 60px;
     line-height: 81px;
-
+    
     color: #000000;
 }
 
@@ -81,6 +78,7 @@ label {
 }
 
 .button {
+    display: flex;
     width: 209px;
     height: 60px;
     margin: auto;
@@ -97,4 +95,20 @@ label {
     background: #2C5680;
     border: 1px solid #333333;
     color: #FFFFFF;
+}
+
+@media (max-width:700px) {
+    .photoAndTitle {
+        flex-direction: column;
+    }
+
+    .title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 3rem;
+        line-height: 81px;
+        
+        color: #000000;
+    }
+
 }
