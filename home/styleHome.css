@@ -1,0 +1,463 @@
+/* **** Estilos Globais **** */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Darker Grotesque', sans-serif;
+}
+
+ul, ol {
+  list-style-type: none;
+ }
+ 
+ a {
+   text-decoration: none;
+ }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+
+.text_center {
+  text-align: center;
+}
+
+.justify_center {
+  justify-content: center;
+}
+
+.justify_between {
+  justify-content: space-between;
+}
+
+.justify_evenly {
+  justify-content: space-evenly;
+}
+
+.show_md {
+  display: none;
+}
+
+/* ***** Estilo Cabeçalho **** */
+
+.navigation_bar {
+  position: relative;
+  background-color:#85CDF5;
+  padding: 20px 0px 10px 0px;
+}
+
+
+/* **** Hamburguer * ****/
+
+.container_hamburguer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#checkbox-hamburguer {
+  position: absolute;
+  opacity: 0;
+}
+
+.hamburguer {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  height: 22px;
+  width: 30px;
+}
+
+.hamburguer .bar {
+  position: absolute;
+  display: block;
+  height: 5px;
+  width: 100%;
+  border-radius: 30px;
+  background: #000;
+  transition: 0.25s ease-in-out;
+}
+
+.hamburguer .bar:nth-child(1) {
+  top:0;
+}
+
+.hamburguer .bar:nth-child(2) {
+  top:8px;
+}
+
+.hamburguer .bar:nth-child(3) {
+  top:16px;
+}
+
+#checkbox-hamburguer:checked + .hamburguer .bar:nth-child(1) {
+  transform: rotate(-45deg);
+  top: 8px;
+}
+
+#checkbox-hamburguer:checked + .hamburguer .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#checkbox-hamburguer:checked + .hamburguer .bar:nth-child(3) {
+  transform: rotate(45deg);
+  top: 8px;
+}
+
+#checkbox-hamburguer:checked ~ .menu {
+  display: block;
+  transform: initial;
+}
+
+.menu .link {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 33.12px;
+}
+
+/* ***** Estilos Main **** */
+
+/* ***** Estilos Main Header **** */
+
+.header {
+  background-color: #999;
+  padding: 30px 0;
+}
+
+.headerTitleContainer {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;  
+}
+
+.headerTitle {
+  color: #fff;
+  font-size: 54px;
+}
+
+.headerTextContainer {
+  width: 100%;
+  text-align: center;  
+}
+
+.headerText {
+  font-size: 17px;
+  color: #fff;
+}
+
+/* ***** Estilos Main About **** */
+
+.about {
+  background-color: #2C5680;
+  padding: 30px 0;
+}
+
+.aboutTitleContainer {
+  width: 100%;
+  text-align: center;  
+
+  margin-bottom: 15px;  
+}
+
+.aboutTitle {
+  color: #DEB959;
+  font-size: 28px;
+}
+
+.aboutTextContainer {
+  width: 100%;
+  text-align: center;  
+}
+
+.aboutText {
+  color: #fff;
+  font-size: 14px;
+}
+
+/* ***** Estilos Main Value **** */
+
+.values {
+  background-color: #333;
+  padding: 30px 0;
+}
+
+.valuesTitleContainer {
+  width: 100%;
+  text-align: center;
+
+  margin-bottom: 15px;
+}
+
+.valuesTitle {
+  color: #DEB959;
+  font-size: 28px;
+}
+
+.valuesItems {
+  text-align: center;
+}
+
+.subItemImg {
+  background-color: #fff;
+  border-radius: 50%;
+
+  width: 75px;
+  height: 75px;
+  margin-bottom: 8px;  
+}
+
+.subItemTitle {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.subItemText {
+  color:#fff;
+  font-size: 14px;
+  display: inline-block;
+  width: 50%;
+
+  margin-bottom: 40px;
+}
+
+/* ***** Estilos Main Example **** */
+
+.example {
+  background-color: #fff;
+  padding: 30px 0;
+}
+
+.exampleTitleContainer {  
+  width: 100%;
+  text-align: center;
+
+  margin-bottom: 50px;  
+}
+
+.exampleTitle {
+  color: #DEB959;
+  font-size: 28px;
+}
+
+.exampleImgContainer{
+  margin-bottom: 8px;
+}
+
+.exampleImg {
+  width: 230px;
+  height: 128px;  
+  box-shadow: -20px -20px #2c5680;
+}
+
+.exampleNameContainer {
+  margin-bottom: 8px;
+}
+
+.exampleName {
+  font-size: 20px;  
+  text-align: center;
+}
+
+.exampleTextContainer {
+  text-align: center;
+}
+
+.exampleText {
+  font-size: 14px;
+  display: inline-block;
+  width: 80%;
+}
+
+.mBt70 {
+  margin-bottom: 70px;
+}
+
+
+
+/* ***** Estilo Footer **** */
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 30px 0;
+}
+
+.gap_footer {
+  gap: 30px;
+}
+
+.infos_footer {
+  max-width: 60%;
+}
+
+.content_item {
+  margin-bottom: 16px;
+}
+
+.btn_footer {
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 700;
+  width: 100%;
+  max-width: 144px;
+  background-color: #DEB959;
+}
+
+.text_footer {
+  margin-left: 8px;
+}
+
+.credit {
+  width: 100%;
+  text-align: center;
+}
+
+.text_credit {
+  margin-bottom: 16px;
+}
+
+
+
+/* **** Media Querries**** */
+
+@media (max-width:991px) {
+
+  .menu {
+    display: none;
+    position: absolute;
+    min-width: 155px;
+    background-color: #85CDF5;
+    right: 0;
+    top: 130px;
+    padding: 8px 16px;
+    transform: translateX(100%);   
+  }
+
+  .menu .link {
+    display: block;
+  }
+}
+
+@media (min-width:768px) {
+  .show_md {
+    display: block;
+  }
+
+  .credit {
+    width: initial;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .justify_between_lg {
+    justify-content: space-between;
+  }
+
+  .rowNoWrapLg {
+    display: flex;
+    justify-content: center;
+  }
+
+  .marginBtLg {
+    margin-bottom: 26px;
+  }
+
+  .menu {
+    display: flex;
+    transform: initial;
+  }
+
+  .gap_menu {
+    gap: 32px;
+  }
+
+  .hamburguer{
+    display: none;
+  }
+  
+  .header {
+    padding: 120px 0px 140px 0;
+  }
+
+  .headerTitle {
+    color: #fff;
+    font-size: 96px;
+  }
+
+  .headerTextContainer {
+    display: flex;
+    justify-content: center;
+}
+
+  .headerText {    
+    font-size: 30px;
+    width: 60%;        
+  }
+
+  .about {
+    padding: 30px 0 60px 0;
+  }
+
+  .aboutTitle {
+    font-size: 48px;
+  }
+
+  .aboutTextContainer {
+    display: flex;
+    justify-content: center;
+}
+
+  .aboutText {
+    font-size: 24px;
+    width: 70%;    
+  }
+
+  .values {
+    padding: 30px 0 90px 0;
+  }
+
+  .valuesTitle {
+    font-size: 48px;
+  }
+
+  .subItemTitle {
+    font-size: 34px;
+  }
+
+  .subItemText {
+    width: 80%;
+    font-size: 20px;
+  }
+
+  .example {
+    padding: 30px 0 120px 0;
+  }
+
+  .exampleTitleContainer{
+    margin-bottom: 60px;
+  }
+
+  .exampleTitle {
+    font-size: 48px;
+  }
+
+  .exampleImg {
+    width: 430px;
+    height: 328px;
+    box-shadow: -40px -40px #2c5680;
+  }  
+
+  .exampleName {
+    font-size: 36px;  
+  }
+
+  .exampleText {
+    font-size: 24px;
+  }
+}  

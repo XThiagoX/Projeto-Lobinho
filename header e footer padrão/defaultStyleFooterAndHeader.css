@@ -121,6 +121,9 @@ ul, ol {
 
 /* ***** Estilo Main **** */
 
+main {
+  min-height: 200px;
+}
 /* ***** Estilo Footer **** */
 
 .footer {
