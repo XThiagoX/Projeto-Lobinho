@@ -1,5 +1,5 @@
 let urlApi = "https://lobinhos.herokuapp.com/wolves"
-let IdWolfe = 270
+let IdWolfe = 95
 
 // CRIAÇÃO E ATRIBUIÇÃO DAS CLASSES AOS BOÕES (ADOTAR E EXCLUIR)
 let buttonAdopt = document.createElement('button')
@@ -62,6 +62,8 @@ function showWolfe(wolfe){
     divDescription.append(descriptionText)
     card.append(divDescription)
     main.append(card)
+
+    buttonAdopt.addEventListener('click', e => { adoptWolf(wolfe) })
 }
 
 
@@ -73,28 +75,34 @@ async function getMessage(){
     urlApi += "/" + IdWolfe
 
     await fetch(urlApi, fetchConfig)
-        .then( anwer => anwer.json()
+        .then( answer => answer.json()
             .then(wolfe => { showWolfe(wolfe)
                 console.log(wolfe) })
             .catch(error => { console.log(error) }))
         .catch(error => { console.log(error) })
+
+      
+
 }
 
 // FUNÇÕES DOS BOTÕES
-buttonAdopt.addEventListener('click', e => {
-    alert('adoção')
-})
+function adoptWolf(wolfe){
+    wolfe.adopted = true    
+}
 
 buttonDelete.addEventListener('click', e => {
-    let fetchConfig ={
+
+    let fetchConfig = {
         method: "DELETE"
     }
 
-    await fetch(urlApi, fetchConfig)
-        .then( anwer => anwer.json()
-            .then(wolfe => { console.log(wolfe) })
+    fetch(urlApi,fetchConfig)
+        .then(answer => alert('Lobo Excluido')
+            .then( wolfe => { alert('Lobo Excluido'), console.log(wolfe) })
             .catch(error => { console.log(error) }))
         .catch(error => { console.log(error) })
+    
+    // * Após a exclusão redirecionar usuário
 })
 
 getMessage()
