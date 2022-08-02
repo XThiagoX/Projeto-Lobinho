@@ -204,8 +204,12 @@ main {
   box-shadow: -20px -20px #2c5680;
 }
 
-.exampleNameContainer {
+.exampleNameContainer,
+.exampleNameContainer2 {
   margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .exampleName,
@@ -213,6 +217,14 @@ main {
   font-size: 20px;  
   text-align: center;
 }
+
+.btnExample {
+  background-color: #DEB959;
+  padding: 4px 30px;
+  border: none;
+  cursor: pointer;
+}
+
 
 .exampleAge,
 .exampleAge2 {
@@ -399,6 +411,11 @@ main {
     flex-direction: column;    
   }
 
+  .exampleNameContainer {
+    justify-content: space-between;
+    gap: 0px;
+  }
+
   .exampleName {
     text-align: start;
   }
@@ -420,6 +437,12 @@ main {
     display: flex;
     flex-direction: row-reverse;
     gap: 20px;
+  }
+
+  .exampleNameContainer2{
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 0px;
   }
 
   .exampleName2 {
@@ -476,6 +499,10 @@ main {
   .exampleName,
   .exampleName2 {
     font-size: 36px;  
+  }
+
+  .btnExample {
+    margin: 10px 0 10px 0;
   }
 
   .exampleAge,
