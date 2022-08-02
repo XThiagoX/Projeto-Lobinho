@@ -304,9 +304,13 @@ ul, ol {
   margin-bottom: 70px;
 }
 
-
-
 /* ***** Estilo Footer **** */
+
+.line {
+  height: 5px;
+  background-color: #2C5680;
+  background-image: linear-gradient(270deg, #2C5680 0%, #DEB959 100%);
+}
 
 .footer {
   background-color: #333;
@@ -575,7 +579,10 @@ ul, ol {
     margin-bottom: 8px;
     padding: 25px;
   }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 280b69b4d0cf3e4190ec690bbcc58f10ab3d39d8
   .subItemTitle {
     font-size: 34px;
   }

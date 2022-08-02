@@ -21,3 +21,9 @@
     line-height: 24px;
     color: #000000;
 }
+
+.line {
+    height: 5px;
+    background-color: #2C5680;
+    background-image: linear-gradient(270deg, #2C5680 0%, #DEB959 100%);
+}
