@@ -21,9 +21,12 @@ ul, ol {
   align-items: center;
 }
 
-
 .text_center {
   text-align: center;
+}
+
+.alignCenter {
+  align-items: center;
 }
 
 .justify_center {
@@ -40,6 +43,14 @@ ul, ol {
 
 .show_md {
   display: none;
+}
+
+.showLg {
+  display: none;
+}
+
+.gap30 {
+  gap: 50px 50px;
 }
 
 /* ***** Estilo Cabeçalho **** */
@@ -125,7 +136,9 @@ ul, ol {
 /* ***** Estilos Main Header **** */
 
 .header {
-  background-color: #999;
+  background-image: url(../imagens/loboHeader.png);
+  background-size: cover;
+  background-position: center;
   padding: 30px 0;
 }
 
@@ -146,7 +159,7 @@ ul, ol {
 }
 
 .headerText {
-  font-size: 17px;
+  font-size: 21px;
   color: #fff;
 }
 
@@ -166,7 +179,7 @@ ul, ol {
 
 .aboutTitle {
   color: #DEB959;
-  font-size: 28px;
+  font-size: 32px;
 }
 
 .aboutTextContainer {
@@ -176,7 +189,7 @@ ul, ol {
 
 .aboutText {
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* ***** Estilos Main Value **** */
@@ -195,7 +208,7 @@ ul, ol {
 
 .valuesTitle {
   color: #DEB959;
-  font-size: 28px;
+  font-size: 32px;
 }
 
 .valuesItems {
@@ -219,15 +232,11 @@ ul, ol {
 
 .subItemText {
   color:#fff;
-  font-size: 14px;
-  display: inline-block;
-  width: 50%;
+  font-size: 16px;
 }
 
-.itemInsurance,
-.itemCare,
-.itemFrame {
-  margin-bottom: 40px;
+.item {
+  width: 195px;  
 }
 
 /* ***** Estilos Main Example **** */
@@ -322,7 +331,7 @@ ul, ol {
 }
 
 .btn_footer {
-  font-size: clamp(18px, 2vw, 25px);
+  font-size: clamp(18px, 1vw, 25px);
   font-weight: 700;
   width: 100%;
   max-width: 144px;
@@ -364,6 +373,7 @@ ul, ol {
   }
 }
 
+
 @media (min-width:768px) {
   .show_md {
     display: block;
@@ -372,9 +382,26 @@ ul, ol {
   .credit {
     width: initial;
   }
+
+  .headerContainer {
+    max-width: 70%;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 992px) {
+
+  .showLg {
+    display: block;
+  }
+
+  .hideLg{
+    display: none;
+  }
+
+  .wLg100{
+    width: 100%;
+  }
 
   .justify_between_lg {
     justify-content: space-between;
@@ -404,7 +431,17 @@ ul, ol {
 
   .hamburguer{
     display: none;
-  }  
+  }
+
+  .header {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .headerContainer {
+    max-width: 665px;
+  }
 
   .headerTextContainer {
     display: flex;
@@ -418,7 +455,6 @@ ul, ol {
 
   .subItemText {
     font-size: 16px;
-    width: 80%;
   }
 
   .exampleImg {
@@ -492,10 +528,7 @@ ul, ol {
 }
 
 @media (min-width:1200px) {
-  .container {
-    max-width: 1180px;
-  }
-
+  
   .header {
     padding: 120px 0px 140px 0;
   }
@@ -506,13 +539,11 @@ ul, ol {
   }
 
   .aboutText {
-    font-size: 24px;
-    width: 70%;    
+    font-size: 24px;    
   }  
 
   .headerText {    
-    font-size: 30px;
-    width: 60%;        
+    font-size: 30px;       
   }
 
   .about {
@@ -548,12 +579,15 @@ ul, ol {
     margin-bottom: 8px;
     padding: 25px;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 280b69b4d0cf3e4190ec690bbcc58f10ab3d39d8
   .subItemTitle {
     font-size: 34px;
   }
 
   .subItemText {
-    width: 80%;
     font-size: 20px;
   }
 
