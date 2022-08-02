@@ -1,16 +1,22 @@
 let urlApi = "https://lobinhos.herokuapp.com/wolves"
 let IdWolfe = 171
 
-function showWolfe(wolfe){
-    let section = document.querySelector(".example")
-    let containerExample = document.createElement('div')
-    containerExample.setAttribute('class', 'container containerExample')
+let section = document.querySelector(".example")
+let containerExample = document.createElement('div')
+containerExample.setAttribute('class', 'container containerExample')
+
+function showFirstWolfe(wolfe){
+    // Criação e atribução de classes aos elementos dinâmicos de apresentação de dois lobos    
+    // Primeiro Lobo
+    
+    // let containerExample = document.createElement('div')
+    // containerExample.setAttribute('class', 'container containerExample')
 
     let exampleTitleContainer = document.querySelector(".exampleTitleContainer")
     let exampleTitle = document.querySelector(".exampleTitle")
     
-    let line1 = document.createElement('div')
-    line1.setAttribute('class', 'linha1 mBt100')
+    let firtWolfe = document.createElement('div')
+    firtWolfe.setAttribute('class', 'linha1 mBt100')
 
     let imageContainer = document.createElement('div')
     imageContainer.setAttribute('class', 'exampleImgContainer')
@@ -22,33 +28,37 @@ function showWolfe(wolfe){
     let infoContent = document.createElement('div')
     infoContent.setAttribute('class', 'exampleInfoContent')
     
-    let NameContaine = document.createElement('div')
-    NameContaine.setAttribute('class', 'exampleNameContainer')
+    let NameContainer = document.createElement('div')
+    NameContainer.setAttribute('class', 'exampleNameContainer')
     
-    let name = document.createElement('div')
+    let name = document.createElement('h3')
     name.setAttribute('class', 'exampleName')
     name.innerHTML = wolfe.name
 
     let ageContainer = document.createElement('div')
     ageContainer.setAttribute('class', 'exampleAgeContainer')
     
-    let age = document.createElement('div')
+    let age = document.createElement('p')
     age.setAttribute('class', 'exampleAge')
     age.innerHTML = wolfe.age
 
     let ContainerDescriptionText = document.createElement('div')
     ContainerDescriptionText.setAttribute('class', 'exampleTextContainer')
     
-    let descriptionText = document.createElement('div')
+    let descriptionText = document.createElement('p')
     descriptionText.setAttribute('class', 'exampleText mBt70')
     descriptionText.innerHTML = wolfe.description
 
+    
+    console.log(wolfe)
+    
     // Atribuição dos blocos
+    // Primeiro Lobo
     imageContainer.append(image)
-    line1.append(imageContainer)
+    firtWolfe.append(imageContainer)
 
-    NameContaine.append(name)
-    infoContent.append(NameContaine)
+    NameContainer.append(name)
+    infoContent.append(NameContainer)
 
     ageContainer.append(age)
     infoContent.append(ageContainer)
@@ -56,14 +66,75 @@ function showWolfe(wolfe){
     ContainerDescriptionText.append(descriptionText)
     infoContent.append(ContainerDescriptionText)
     
-    line1.append(infoContent)
+    firtWolfe.append(infoContent)
 
-    containerExample.append(line1)
+    containerExample.append(firtWolfe)
     section.append(containerExample)
-    
+
+      
 }
 
-async function getMessage(){   
+function showSecondWolfe(wolfe){
+    // let section = document.querySelector(".example")
+
+    // let containerExample = document.createElement('div')
+    // containerExample.setAttribute('class', 'container containerExample')
+
+    //Segundo lobo
+    let secondWolfe = document.createElement('div')
+    secondWolfe.setAttribute('class', 'linha2')
+
+    let imageContainer2 = document.createElement('div')
+    imageContainer2.setAttribute('class', 'exampleImgContainer')
+
+    let imageSecondWolfe = document.createElement('img')
+    imageSecondWolfe.setAttribute('class', 'exampleImg2')
+    imageSecondWolfe.setAttribute('src', wolfe.image_url) 
+
+    let infoContent2 = document.createElement('div')
+    infoContent2.setAttribute('class', 'exampleInfoContent')
+    
+    let NameContainer2 = document.createElement('div')
+    NameContainer2.setAttribute('class', 'exampleNameContainer')
+    
+    let nameSecondWolfe = document.createElement('h3')
+    nameSecondWolfe.setAttribute('class', 'exampleName2')
+    nameSecondWolfe.innerHTML = wolfe.name
+
+    let ageContainer2 = document.createElement('div')
+    ageContainer2.setAttribute('class', 'exampleAgeContainer')
+    
+    let ageSecondWolfe = document.createElement('p')
+    ageSecondWolfe.setAttribute('class', 'exampleAge2')
+    ageSecondWolfe.innerHTML = wolfe.age
+
+    let ContainerDescriptionText2 = document.createElement('div')
+    ContainerDescriptionText2.setAttribute('class', 'exampleTextContainer2')
+    
+    let descriptionTextSecondWolfe = document.createElement('p')
+    descriptionTextSecondWolfe.setAttribute('class', 'exampleText2')
+    descriptionTextSecondWolfe.innerHTML = wolfe.description
+    
+    // Segundo Lobo
+    imageContainer2.append(imageSecondWolfe)
+    secondWolfe.append(imageContainer2)
+
+    NameContainer2.append(nameSecondWolfe)
+    infoContent2.append(NameContainer2)
+
+    ageContainer2.append(ageSecondWolfe)
+    infoContent2.append(ageContainer2)
+
+    ContainerDescriptionText2.append(descriptionTextSecondWolfe)
+    infoContent2.append(ContainerDescriptionText2)
+    
+    secondWolfe.append(infoContent2)
+
+    containerExample.append(secondWolfe)
+    section.append(containerExample)      
+}
+
+async function getFirstWolfe(){   
 
     let fetchConfig = {
         method: "GET"
@@ -74,10 +145,30 @@ async function getMessage(){
 
     await fetch(urlApi, fetchConfig)
         .then( answer => answer.json()
-            .then(wolfe => { showWolfe(wolfe)
+            .then(wolfe => { showFirstWolfe(wolfe)
                 console.log(wolfe) })
             .catch(error => { console.log(error) }))
         .catch(error => { console.log(error) })      
 }
 
-getMessage()
+async function getSecondWolfe(){  
+    IdWolfe = 147
+    urlApi = "https://lobinhos.herokuapp.com/wolves" 
+    urlApi += "/" + IdWolfe
+    console.log(urlApi)
+
+    let fetchConfig = {
+        method: "GET"
+    }
+   
+    await fetch(urlApi, fetchConfig)
+        .then( answer => answer.json()
+            .then(wolfe => { showSecondWolfe(wolfe)
+                console.log(wolfe) })
+            .catch(error => { console.log(error) }))
+        .catch(error => { console.log(error) })      
+}
+
+
+getFirstWolfe()
+getSecondWolfe()

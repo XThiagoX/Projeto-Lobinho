@@ -1,5 +1,5 @@
 let urlApi = "https://lobinhos.herokuapp.com/wolves"
-let IdWolfe = 95
+let IdWolfe = 171
 
 // CRIAÇÃO E ATRIBUIÇÃO DAS CLASSES AOS BOÕES (ADOTAR E EXCLUIR)
 let buttonAdopt = document.createElement('button')
