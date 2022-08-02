@@ -1,20 +1,15 @@
 let urlApi = "https://lobinhos.herokuapp.com/wolves"
 let IdWolfe = 171
 
+// ELEMENTO REFERÊNCIA DA PÁGINA PARA COMTAGEM DO BLOCO COM INF DOS LOBOS
 let section = document.querySelector(".example")
 let containerExample = document.createElement('div')
 containerExample.setAttribute('class', 'container containerExample')
 
+// FUNÇÕES DE MONTAGEM DOS BLOOS
+// Primeiro Lobo
 function showFirstWolfe(wolfe){
-    // Criação e atribução de classes aos elementos dinâmicos de apresentação de dois lobos    
-    // Primeiro Lobo
-    
-    // let containerExample = document.createElement('div')
-    // containerExample.setAttribute('class', 'container containerExample')
-
-    let exampleTitleContainer = document.querySelector(".exampleTitleContainer")
-    let exampleTitle = document.querySelector(".exampleTitle")
-    
+    // Criação e atribução de classes aos elementos dinâmicos de apresentação de dois lobos                
     let firtWolfe = document.createElement('div')
     firtWolfe.setAttribute('class', 'linha1 mBt100')
 
@@ -49,11 +44,7 @@ function showFirstWolfe(wolfe){
     descriptionText.setAttribute('class', 'exampleText mBt70')
     descriptionText.innerHTML = wolfe.description
 
-    
-    console.log(wolfe)
-    
-    // Atribuição dos blocos
-    // Primeiro Lobo
+    // Atribuição/Montagem dos blocos    
     imageContainer.append(image)
     firtWolfe.append(imageContainer)
 
@@ -69,18 +60,12 @@ function showFirstWolfe(wolfe){
     firtWolfe.append(infoContent)
 
     containerExample.append(firtWolfe)
-    section.append(containerExample)
-
-      
+    section.append(containerExample)      
 }
-
+    
+//Segundo lobo
 function showSecondWolfe(wolfe){
-    // let section = document.querySelector(".example")
-
-    // let containerExample = document.createElement('div')
-    // containerExample.setAttribute('class', 'container containerExample')
-
-    //Segundo lobo
+// Criação e atribução de classes aos elementos dinâmicos de apresentação de dois lobos                
     let secondWolfe = document.createElement('div')
     secondWolfe.setAttribute('class', 'linha2')
 
@@ -115,7 +100,7 @@ function showSecondWolfe(wolfe){
     descriptionTextSecondWolfe.setAttribute('class', 'exampleText2')
     descriptionTextSecondWolfe.innerHTML = wolfe.description
     
-    // Segundo Lobo
+    // Atribuição/Montagem dos blocos 
     imageContainer2.append(imageSecondWolfe)
     secondWolfe.append(imageContainer2)
 
@@ -134,6 +119,7 @@ function showSecondWolfe(wolfe){
     section.append(containerExample)      
 }
 
+// FUNÇÕES DE REQUEST GET PARA A API
 async function getFirstWolfe(){   
 
     let fetchConfig = {
@@ -169,6 +155,6 @@ async function getSecondWolfe(){
         .catch(error => { console.log(error) })      
 }
 
-
+// CHAMDA DAS FUNÇÕES
 getFirstWolfe()
 getSecondWolfe()
