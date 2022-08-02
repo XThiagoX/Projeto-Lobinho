@@ -512,6 +512,7 @@ ul, ol {
     flex-direction: row-reverse;
     gap: 60px;
     justify-content: center;
+    margin-bottom: 100px;
   }
 
   .exampleName2 {
@@ -579,10 +580,7 @@ ul, ol {
     margin-bottom: 8px;
     padding: 25px;
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> 280b69b4d0cf3e4190ec690bbcc58f10ab3d39d8
   .subItemTitle {
     font-size: 34px;
   }
