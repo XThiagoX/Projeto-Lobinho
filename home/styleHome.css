@@ -53,6 +53,11 @@ ul, ol {
   gap: 50px 50px;
 }
 
+.linha1,
+.linha2 {
+  margin-bottom: 100px;
+}
+
 /* ***** Estilo Cabeçalho **** */
 
 .navigation_bar {
@@ -473,6 +478,7 @@ ul, ol {
     display: flex;
     justify-content: center;
     gap: 60px;
+    margin-bottom: 100px;
   }
 
   .mBt100 {
