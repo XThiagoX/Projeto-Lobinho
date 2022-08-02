@@ -7,13 +7,29 @@
   font-family: 'Darker Grotesque', sans-serif;
 }
 
-ul, ol {
+ul,
+ol {
   list-style-type: none;
- }
- 
- a {
-   text-decoration: none;
- }
+}
+
+a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color:#000;
+}
+
+.link:after {
+  display:block;
+  content: '';
+  border-bottom: solid 5px ;  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+  transform-origin: 100% 50%; 
+}
+
+.link:hover:after {
+  transform: scaleX(0.75);
+}
 
 .row {
   display: flex;
@@ -57,7 +73,7 @@ ul, ol {
 
 .navigation_bar {
   position: relative;
-  background-color:#85CDF5;
+  background-color: #85CDF5;
   padding: 20px 0px 10px 0px;
 }
 
@@ -95,32 +111,32 @@ ul, ol {
 }
 
 .hamburguer .bar:nth-child(1) {
-  top:0;
+  top: 0;
 }
 
 .hamburguer .bar:nth-child(2) {
-  top:8px;
+  top: 8px;
 }
 
 .hamburguer .bar:nth-child(3) {
-  top:16px;
+  top: 16px;
 }
 
-#checkbox-hamburguer:checked + .hamburguer .bar:nth-child(1) {
+#checkbox-hamburguer:checked+.hamburguer .bar:nth-child(1) {
   transform: rotate(-45deg);
   top: 8px;
 }
 
-#checkbox-hamburguer:checked + .hamburguer .bar:nth-child(2) {
+#checkbox-hamburguer:checked+.hamburguer .bar:nth-child(2) {
   opacity: 0;
 }
 
-#checkbox-hamburguer:checked + .hamburguer .bar:nth-child(3) {
+#checkbox-hamburguer:checked+.hamburguer .bar:nth-child(3) {
   transform: rotate(45deg);
   top: 8px;
 }
 
-#checkbox-hamburguer:checked ~ .menu {
+#checkbox-hamburguer:checked~.menu {
   display: block;
   transform: initial;
 }
@@ -136,6 +152,7 @@ ul, ol {
 main {
   min-height: 200px;
 }
+
 /* ***** Estilo Footer **** */
 
 .footer {
@@ -195,7 +212,7 @@ main {
     right: 0;
     top: 130px;
     padding: 8px 16px;
-    transform: translateX(100%);   
+    transform: translateX(100%);
   }
 
   .menu .link {
@@ -219,11 +236,11 @@ main {
     display: block;
   }
 
-  .hideLg{
+  .hideLg {
     display: none;
   }
 
-  .wLg100{
+  .wLg100 {
     width: 100%;
   }
 
@@ -253,7 +270,7 @@ main {
     gap: 32px;
   }
 
-  .hamburguer{
+  .hamburguer {
     display: none;
   }
-}  
+}
