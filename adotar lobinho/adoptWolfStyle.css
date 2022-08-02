@@ -1,0 +1,114 @@
+.photo {
+    margin: 50px 0px 0px 10%;
+}
+
+.photoAndTitle {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+}
+
+#photoWolf {
+    border-radius: 50%;
+}
+
+.title {
+    margin-left: 6%;
+    margin-top: 6%;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 81px;
+    
+    color: #000000;
+}
+
+form {
+    width: 70%;
+    margin-left: 10%;
+}
+
+.nameAndAge {
+    display: flex;
+    flex-direction: row;
+}
+
+.name {
+    margin: 5% 12% 0px;
+    width: 868px;
+    height: 84px;
+}
+
+.age {
+    margin: 5% 0% 0% 0%;
+    width: 72px;
+    height: 84px;
+}
+
+.email {
+    margin: 2% 12% 4%;
+    width: 88%;
+    height: 84px;
+}
+
+label {
+    font-size: 1.6rem;
+}
+
+#name {
+    width: 100%;
+    height: 50%;
+    border-bottom: solid;
+    border-width: 1px;
+}
+
+#age {
+    width: 100%;
+    height: 50%;
+    border-bottom: solid;
+    border-width: 1px;
+}
+
+#email {
+    width: 100%;
+    height: 50%;
+    border-bottom: solid;
+    border-width: 1px;
+}
+
+.button {
+    display: flex;
+    width: 209px;
+    height: 60px;
+    margin: auto;
+    margin-bottom: 2%;
+}
+
+.adopt {
+    font-size: 2rem;
+    padding: 5px 20px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 49px;
+    background: #2C5680;
+    border: 1px solid #333333;
+    color: #FFFFFF;
+}
+
+@media (max-width:700px) {
+    .photoAndTitle {
+        flex-direction: column;
+    }
+
+    .title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 3rem;
+        line-height: 81px;
+        
+        color: #000000;
+    }
+
+}
