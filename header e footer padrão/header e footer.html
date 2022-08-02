@@ -4,44 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adote um lobinho</title>
     <link rel="stylesheet" href="defaultStyleGrid.css">
-    <link rel="stylesheet" href="defaultStyleFooterAndHeader.css">
+    <link rel="stylesheet" href="defaultStyleHeaderAndFooter.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700&display=swap" rel="stylesheet">
+    <title>Header e Footer Padrão</title>
 </head>
 <body>
-    <header class="navigation_bar">
+  <header class="navigation_bar">
 
-        <div class="container">
-    
-          <div class="row justify_between">
-            
-            <img src="../imagens/logo.png" class="logo" width="95px" height="110px" alt="">    
-            
-            <div class="container_hamburguer">
-              
-              <input type="checkbox" id="checkbox-hamburguer">
-              
-              <label class="hamburguer" for="checkbox-hamburguer">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-              </label>
-              
-              <nav class="menu gap_menu">
-                <a href="#" class="link">Nossos Lobinhos</a>
-                <a href="#" class="link">Quem Somos</a>
-              </nav>
+    <div class="container">
 
-            </div>
-            
-          </div>
-    
+      <div class="row justify_between">
+        
+        <img src="../imagens/logo.png" class="logo hideLg" width="95px" height="110px" alt="">    
+        
+        <div class="container_hamburguer wLg100">
+          
+          <input type="checkbox" id="checkbox-hamburguer">
+          
+          <label class="hamburguer" for="checkbox-hamburguer">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </label>
+          
+          <nav class="menu gap_menu justify_between_lg wLg100 alignCenter">
+            <a href="#" class="link">Nossos Lobinhos</a>
+            <img  src="../imagens/logo.png" class="showLg" width="95px" height="110px" alt="">
+            <a href="#" class="link">Quem Somos</a>
+          </nav>
+
         </div>
-    
-    </header>
+        
+      </div>
+
+    </div>
+
+</header>
     <main>
       
     </main>
