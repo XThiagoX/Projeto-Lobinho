@@ -7,6 +7,12 @@
   font-family: 'Darker Grotesque', sans-serif;
 }
 
+.showWolfe{
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
 ul, ol {
   list-style-type: none;
  }

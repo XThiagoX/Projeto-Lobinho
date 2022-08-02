@@ -6,6 +6,13 @@ let section = document.querySelector(".example")
 let containerExample = document.createElement('div')
 containerExample.setAttribute('class', 'container containerExample')
 
+function transferOfShowLittelWolfePage(wolfe){
+    console.log(wolfe)
+    window.location.href = "../Mostrar_Lobinho/showWolfePage.html"    
+    console.log(wolfe)
+        
+}
+
 // FUNÇÕES
 function showWolfe(wolfe){
     let firtWolfe = document.createElement('div')
@@ -13,6 +20,9 @@ function showWolfe(wolfe){
 
     let imageContainer = document.createElement('div')
     imageContainer.setAttribute('class', 'exampleImgContainer')
+
+    let buttonShowWolfe = document.createElement('a')
+    buttonShowWolfe.setAttribute('class', 'showWolfe')
 
     let image = document.createElement('img')
     image.setAttribute('class', 'exampleImg')
@@ -42,8 +52,9 @@ function showWolfe(wolfe){
     descriptionText.setAttribute('class', 'exampleText mBt70')
     descriptionText.innerHTML = wolfe.description
 
-    // Atribuição/Montagem dos blocos    
-    imageContainer.append(image)
+    // Atribuição/Montagem dos blocos   
+    buttonShowWolfe.append(image) 
+    imageContainer.append(buttonShowWolfe)
     firtWolfe.append(imageContainer)
 
     NameContainer.append(name)
@@ -59,6 +70,8 @@ function showWolfe(wolfe){
 
     containerExample.append(firtWolfe)
     section.append(containerExample)      
+
+    buttonShowWolfe.addEventListener('click', e => { transferOfShowLittelWolfePage(wolfe) })
 }
 
 function showWolfeReverse(wolfe){
@@ -67,6 +80,9 @@ function showWolfeReverse(wolfe){
 
     let imageContainer2 = document.createElement('div')
     imageContainer2.setAttribute('class', 'exampleImgContainer')
+
+    let buttonShowWolfe = document.createElement('a')
+    buttonShowWolfe.setAttribute('class', 'showWolfe')
 
     let imageSecondWolfe = document.createElement('img')
     imageSecondWolfe.setAttribute('class', 'exampleImg2')
@@ -97,7 +113,8 @@ function showWolfeReverse(wolfe){
     descriptionTextSecondWolfe.innerHTML = wolfe.description
     
     // Atribuição/Montagem dos blocos 
-    imageContainer2.append(imageSecondWolfe)
+    buttonShowWolfe.append(imageSecondWolfe)
+    imageContainer2.append(buttonShowWolfe)
     secondWolfe.append(imageContainer2)
 
     NameContainer2.append(nameSecondWolfe)
@@ -112,7 +129,9 @@ function showWolfeReverse(wolfe){
     secondWolfe.append(infoContent2)
 
     containerExample.append(secondWolfe)
-    section.append(containerExample)      
+    section.append(containerExample) 
+    
+    buttonShowWolfe.addEventListener('click', e => { transferOfShowLittelWolfePage(wolfe.id) })
 }
 
 // FUNÇÕES DE REQUEST GET PARA A API
@@ -122,16 +141,6 @@ async function getWolfe(){
     let fetchConfig = {
         method: "GET"
     }       
-
-    // fetch(urlApi, fetchConfig)
-    //     .then( reply => reply.json()
-    //         .then(answer => { 
-    //             answer.forEach( wolfe => { showWolfe(wolfe) })
-    //         })
-    //         .catch(error => { console.log(error)})
-    //     )
-    //     .catch(error => { console.log(error) })
-
 
     fetch(urlApi, fetchConfig)
         .then( reply => reply.json()
