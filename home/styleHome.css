@@ -327,7 +327,7 @@ ul, ol {
 }
 
 .btn_footer {
-  font-size: clamp(18px, 2vw, 25px);
+  font-size: clamp(18px, 1vw, 25px);
   font-weight: 700;
   width: 100%;
   max-width: 144px;
