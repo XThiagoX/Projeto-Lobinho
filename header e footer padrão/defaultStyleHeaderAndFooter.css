@@ -25,6 +25,10 @@ ul, ol {
   text-align: center;
 }
 
+.alignCenter {
+  align-items: center;
+}
+
 .justify_center {
   justify-content: center;
 }
@@ -39,6 +43,14 @@ ul, ol {
 
 .show_md {
   display: none;
+}
+
+.showLg {
+  display: none;
+}
+
+.gap30 {
+  gap: 50px 50px;
 }
 
 /* ***** Estilo Cabeçalho **** */
@@ -203,8 +215,33 @@ main {
 
 @media (min-width: 992px) {
 
+  .showLg {
+    display: block;
+  }
+
+  .hideLg{
+    display: none;
+  }
+
+  .wLg100{
+    width: 100%;
+  }
+
   .justify_between_lg {
     justify-content: space-between;
+  }
+
+  .rowNoWrapLg {
+    display: flex;
+    justify-content: center;
+  }
+
+  .marginBtLg {
+    margin-bottom: 26px;
+  }
+
+  .mBt70 {
+    margin-bottom: 0px;
   }
 
   .menu {
@@ -218,5 +255,5 @@ main {
 
   .hamburguer{
     display: none;
-  } 
+  }
 }  
