@@ -55,6 +55,7 @@ input{
     display: flex;   
     flex-direction: row;
     gap: 20px;
+    margin-bottom: 18px;
 }
 
 .name {
@@ -63,11 +64,9 @@ input{
 
 .inputWolfeName {
     font-size: 24px;
-}
-
-.inputWolfeName{
     width: 100%;
 }
+
 
 .inputWolfeAge{
     width: 100%;
@@ -75,6 +74,10 @@ input{
 
 .inputlinkPhoto{
     width: 100%;
+}
+
+.linkPhotoContainer {
+    margin-bottom: 20px;
 }
 
 textarea{
