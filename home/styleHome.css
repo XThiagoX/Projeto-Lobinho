@@ -356,6 +356,7 @@ ul, ol {
   width: 100%;
   max-width: 144px;
   background-color: #DEB959;
+  padding: 4px;
 }
 
 .text_footer {
