@@ -9,6 +9,7 @@ let section = document.querySelector(".example")
 let containerExample = document.createElement('div')
 containerExample.setAttribute('class', 'container containerExample')
 
+// transferncia para página show lobinho()
 function transferOfShowLittelWolfePage(wolfe){
     console.log(wolfe)
     window.location.href = "../Mostrar_Lobinho/showWolfePage.html"    
@@ -157,44 +158,52 @@ function showWolfeReverse(wolfe){
     buttonShowWolfe.addEventListener('click', e => { transferOfShowLittelWolfePage(wolfe.id) })
 }
 
+alert('Para ver os lobos adotados marque o checkbox e recarregue a página')
 // FUNÇÕES DE REQUEST GET PARA A API
 async function getWolfe(){   
-    let i = 1
 
+    let i = 1
     let fetchConfig = {
         method: "GET"
     }       
 
-    fetch(urlApi, fetchConfig)
-        .then( reply => reply.json()
-            .then( answer => { 
-                if(adoptedCheckBox.checked == false){
-                    answer.forEach( wolfe => {  
+    if (adoptedCheckBox.checked == false) {             
+        fetch(urlApi, fetchConfig)
+            .then( reply => reply.json()
+                .then( answer => { 
+                    answer.forEach( wolfe => {                                   
+                        if (i % 2 != 0){
+                            showWolfe(wolfe)
+                        }
+                        else{
+                            showWolfeReverse(wolfe)
+                        }   
+                        i++                    
+                    })
+                })
+                .catch(error => { console.log(error) }))
+            .catch(error => { console.log(error) })      
+    } 
+    else{
+        let urlApiAdopted = urlApi
+        urlApiAdopted += "/adopted"
+
+        fetch(urlApiAdopted, fetchConfig)
+            .then( reply => reply.json()
+                .then( answer => { 
+                    answer.forEach( wolfe => {                                   
                         if (i % 2 != 0){
                             showWolfe(wolfe)
                         }
                         else{
                             showWolfeReverse(wolfe)
                         }
-                        i++                                                                
+                        i++
                     })
-                }
-                else{
-                    answer.forEach( wolfe => {
-                        if (wolfe.adopted == true) {
-                            if (i % 2 != 0){
-                                showWolfe(wolfe)
-                            }
-                            else{
-                                showWolfeReverse(wolfe)
-                            }
-                            i++ 
-                        }
-                    })
-                }
-             })
-            .catch(error => { console.log(error) }))
-        .catch(error => { console.log(error) })      
+                })
+                .catch(error => { console.log(error) }))
+            .catch(error => { console.log(error) })
+    }    
 }
 
 // CHAMDA DAS FUNÇÕES
