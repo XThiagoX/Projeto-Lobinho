@@ -121,36 +121,32 @@ function showSecondWolfe(wolfe){
 
 // FUNÇÕES DE REQUEST GET PARA A API
 async function getFirstWolfe(){   
-
+    let indexRandom = Math.floor(Math.random()*120)
+    
     let fetchConfig = {
         method: "GET"
-    }
+    }    
 
-    urlApi += "/" + IdWolfe
-    console.log(urlApi)
-
+    console.log(indexRandom)
     await fetch(urlApi, fetchConfig)
         .then( answer => answer.json()
-            .then(wolfe => { showFirstWolfe(wolfe)
-                console.log(wolfe) })
+            .then(wolfe => { showFirstWolfe(wolfe[indexRandom]) })
             .catch(error => { console.log(error) }))
         .catch(error => { console.log(error) })      
 }
 
 async function getSecondWolfe(){  
-    IdWolfe = 147
-    urlApi = "https://lobinhos.herokuapp.com/wolves" 
-    urlApi += "/" + IdWolfe
-    console.log(urlApi)
 
+    let indexRandom = Math.floor(Math.random()*120)
+
+    console.log(indexRandom)
     let fetchConfig = {
         method: "GET"
     }
    
     await fetch(urlApi, fetchConfig)
         .then( answer => answer.json()
-            .then(wolfe => { showSecondWolfe(wolfe)
-                console.log(wolfe) })
+            .then(wolfe => { showSecondWolfe(wolfe[indexRandom])})
             .catch(error => { console.log(error) }))
         .catch(error => { console.log(error) })      
 }
