@@ -1,5 +1,8 @@
 const urlApi = "https://lobinhos.herokuapp.com/wolves"
-let IdWolfe = 171
+
+// EXIBIÇÃO DO LOBOS ADOTADOS
+let adoptedCheckBox = document.querySelector('.checkSearchWolf')
+console.log(adoptedCheckBox.checked)
 
 // ELEMENTO REFERÊNCIA DA PÁGINA PARA COMTAGEM DO BLOCO COM INF DOS LOBOS
 let section = document.querySelector(".example")
@@ -9,8 +12,18 @@ containerExample.setAttribute('class', 'container containerExample')
 function transferOfShowLittelWolfePage(wolfe){
     console.log(wolfe)
     window.location.href = "../Mostrar_Lobinho/showWolfePage.html"    
-    console.log(wolfe)
-        
+    console.log(wolfe)        
+}
+
+function Adoption(wolfe,buttonAdoption){
+    if(wolfe.adopted == true){
+        buttonAdoption.textContent = "Adotado"
+        buttonAdoption.style.backgroundColor = "#7AAC3A"
+    }
+    else{
+        buttonAdoption.textContent = "Adotar"
+        buttonAdoption.style.backgroundColor = "#DEB959"
+    }
 }
 
 // FUNÇÕES
@@ -38,6 +51,9 @@ function showWolfe(wolfe){
     name.setAttribute('class', 'exampleName')
     name.innerHTML = wolfe.name
 
+    let buttonAdoption = document.createElement('button')
+    buttonAdoption.setAttribute('class', 'btnExample')
+    
     let ageContainer = document.createElement('div')
     ageContainer.setAttribute('class', 'exampleAgeContainer')
     
@@ -58,6 +74,8 @@ function showWolfe(wolfe){
     firtWolfe.append(imageContainer)
 
     NameContainer.append(name)
+    Adoption(wolfe,buttonAdoption)
+    NameContainer.append(buttonAdoption)
     infoContent.append(NameContainer)
 
     ageContainer.append(age)
@@ -98,6 +116,9 @@ function showWolfeReverse(wolfe){
     nameSecondWolfe.setAttribute('class', 'exampleName2')
     nameSecondWolfe.innerHTML = wolfe.name
 
+    let buttonAdoption = document.createElement('button')
+    buttonAdoption.setAttribute('class', 'btnExample')
+
     let ageContainer2 = document.createElement('div')
     ageContainer2.setAttribute('class', 'exampleAgeContainer')
     
@@ -116,8 +137,10 @@ function showWolfeReverse(wolfe){
     buttonShowWolfe.append(imageSecondWolfe)
     imageContainer2.append(buttonShowWolfe)
     secondWolfe.append(imageContainer2)
-
-    NameContainer2.append(nameSecondWolfe)
+    
+    Adoption(wolfe,buttonAdoption)
+    NameContainer2.append(buttonAdoption)
+    NameContainer2.append(nameSecondWolfe)    
     infoContent2.append(NameContainer2)
 
     ageContainer2.append(ageSecondWolfe)
@@ -145,15 +168,30 @@ async function getWolfe(){
     fetch(urlApi, fetchConfig)
         .then( reply => reply.json()
             .then( answer => { 
-                answer.forEach( wolfe => {                    
-                    if (i % 2 != 0){
-                        showWolfe(wolfe)
-                    }
-                    else{
-                        showWolfeReverse(wolfe)
-                    }
-                    i++
-                })
+                if(adoptedCheckBox.checked == false){
+                    answer.forEach( wolfe => {  
+                        if (i % 2 != 0){
+                            showWolfe(wolfe)
+                        }
+                        else{
+                            showWolfeReverse(wolfe)
+                        }
+                        i++                                                                
+                    })
+                }
+                else{
+                    answer.forEach( wolfe => {
+                        if (wolfe.adopted == true) {
+                            if (i % 2 != 0){
+                                showWolfe(wolfe)
+                            }
+                            else{
+                                showWolfeReverse(wolfe)
+                            }
+                            i++ 
+                        }
+                    })
+                }
              })
             .catch(error => { console.log(error) }))
         .catch(error => { console.log(error) })      
