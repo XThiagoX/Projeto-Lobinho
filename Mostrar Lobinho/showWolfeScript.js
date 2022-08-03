@@ -1,5 +1,5 @@
-let urlApi = "https://lobinhos.herokuapp.com/wolves"
-let IdWolfe = 171
+let urlApi = "https://lobinhos.herokuapp.com/wolves/"
+let IdWolfe = 293
 
 // CRIAÇÃO E ATRIBUIÇÃO DAS CLASSES AOS BOÕES (ADOTAR E EXCLUIR)
 let buttonAdopt = document.createElement('button')
@@ -79,15 +79,32 @@ async function getMessage(){
             .then(wolfe => { showWolfe(wolfe)
                 console.log(wolfe) })
             .catch(error => { console.log(error) }))
-        .catch(error => { console.log(error) })
-
-      
-
+        .catch(error => { console.log(error) })      
 }
 
 // FUNÇÕES DOS BOTÕES
-function adoptWolf(wolfe){
-    wolfe.adopted = true    
+function adoptWolf(){
+    alert('ok')    
+
+    let fetchBody = {        
+        adopter_name:  adopter_name,
+        adopter_age:  adopter_age,
+        adopter_email: adopter_email                    
+    }
+
+    let fetchConfig = {
+        method: "PUT",
+        headers:{"Content-Type":"application/json"},
+        body: JSON.stringify(fetchBody)
+    }
+
+    fetch(urlApi,fetchConfig)
+        .then(answer => alert('Lobo Adotado')
+            .then( wolfe => { wolfe.adopted = true   
+                 alert('Lobo Adotado')  })
+            .catch(error => { console.log(error) }))
+        .catch(error => { console.log(error) })
+        console.log(wolfe)
 }
 
 buttonDelete.addEventListener('click', e => {
